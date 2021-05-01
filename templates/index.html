@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p class="intro">
+    German Traffic Signs Classifier</p>
+
+
+<div>
+    <form id="upload-file" method="POST" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label">
+            Upload
+        </label>
+        <input type="file" name="file" id="imageUpload">
+    </form>
+
+
+
+    <div class="image-section" style="display: none;">
+        <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+        </div>
+    </div>
+    <button type="button" id="btn-predict">Go!</button>
+    <div class="loader" style="display: none;"></div>
+
+    <h3 id="result">
+        <span> </span>
+    </h3>
+
+
+
+</div>
+<div class="info">
+    <h3>Project Information</h3>
+    <h5>Accuracy = <strong>95%</strong></h5>
+    <div class="info-img">
+        <img src="{{url_for('static',filename='Accuracy.png')}}">
+        <img src="{{url_for('static',filename='Loss.png')}}">
+    </div>
+</div>
+{% endblock %}
